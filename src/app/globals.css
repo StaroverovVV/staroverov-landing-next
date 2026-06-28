@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Colors from DESIGN.md */
+  --color-canvas: #F5F2EC;
+  --color-surface: #FFFFFF;
+  --color-ink: #262626;
+  --color-accent: #38141B;
+  --color-accent-hover: #4A1C26;
+  --color-muted: #8C8478;
+  --color-border: #D4CFC6;
+  --color-accent-light: #EDE8E0;
+  --color-blue-bg: #EFF3FF;
+  --color-cta: #FFA96B;
+  --color-dark: #111111;
+
+  /* Fonts */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Base */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  background-color: var(--color-canvas);
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-canvas);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-muted);
+}
